@@ -1,4 +1,3 @@
-#Feel free to edit code without permission.
 import os
 os.system("color a")
 os.system("title PyTerminal")
@@ -56,18 +55,17 @@ def terminal():
         terminal()
     if command == "rem":
         file = input("Enter a file or directory > ")
-        if os.path.exists(file):
-            if os.path.isfile(file):
-                if file != "terminal.py":
-                    os.remove(file)
-                elif file == "":
-                    terminal()
+        if file != "":
+            if os.path.exists(file):
+                if os.path.isfile(file):
+                    if file != "terminal.py":
+                        os.remove(file)
+                    else:
+                        print("You have to manually remove the terminal.")
                 else:
-                    print("You have to manually remove the terminal.")
+                    os.rmdir(file)
             else:
-                os.rmdir(file)
-        else:
-            print("The file or directory doesn't exist!")
+                print("The file or directory doesn't exist!")
         terminal()
     if command == "color":
         color = input("Enter > ")
