@@ -60,6 +60,8 @@ def terminal():
             if os.path.isfile(file):
                 if file != "terminal.py":
                     os.remove(file)
+                elif file == "":
+                    terminal()
                 else:
                     print("You have to manually remove the terminal.")
             else:
