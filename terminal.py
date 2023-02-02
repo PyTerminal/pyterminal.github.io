@@ -15,13 +15,15 @@ def terminal():
         terminal()
     if command == "output":
         output = input("Enter something to output ")
-        os.system("echo " + output)
+        if output != "":
+            os.system("echo " + output)
         terminal()
     if command == "exit":
         exit()
     if command == "ping":
         destination = input("Enter who you want to ping > ")
-        os.system("ping " + destination)
+        if destination != "":
+         os.system("ping " + destination)
         terminal()
     if command == "":
         terminal()
@@ -47,11 +49,12 @@ def terminal():
         terminal()
     if command == "openfile":
         file = input("Enter a file > ")
-        if os.path.exists(file):
-            if os.path.isfile(file):
-                os.system("notepad " + file)
-            else:
-                print("You can not enter a directory")
+        if file != "":
+            if os.path.exists(file):
+                if os.path.isfile(file):
+                    os.system("notepad " + file)
+                else:
+                    print("You can not enter a directory")
         terminal()
     if command == "rem":
         file = input("Enter a file or directory > ")
@@ -69,7 +72,8 @@ def terminal():
         terminal()
     if command == "color":
         color = input("Enter > ")
-        os.system("color " + color)
+        if color != "":
+            os.system("color " + color)
         terminal()
     if command == "cls":
         os.system("cls")
@@ -82,10 +86,13 @@ def terminal():
             os.system("ipconfig")
     if command == "exists":
         file = input("Enter a file or directory > ")
-        if os.path.exists(file):
-            print("The file or directory exists!")
+        if file != "":
+            if os.path.exists(file):
+                print("The file or directory exists!")
+            else:
+                print("The file or directory doesn't exist!")
         else:
-            print("The file or directory doesn't exist!")
+            terminal()
     if command == "batch":
         print("Running batch files could be dangerous. USE AT OWN RISK. Hit enter key to not run a batch file.")
         batch = input("Where is the batch file? ")
@@ -98,16 +105,26 @@ def terminal():
     if command == "webview":
         import webbrowser
         url = input("Enter a website > ")
-        webbrowser.open_new(url)
+        if url != "":
+            webbrowser.open_new(url)
+        else:
+            terminal()
+        terminal()
     if command == "start":
         program = input("Enter a program > ")
-        os.system("start " + program)
+        if program != "":
+            os.system("start " + program)
+        else:
+            terminal()
         terminal()
     if command == "cd":
         os.system("cd")
     if command == "goto":
         destination = input("Enter destination > ")
-        os.system("cd " + destination)
+        if destination != "":
+            os.system("cd " + destination)
+        else:
+            terminal()
     if command == "python":
         python = input("Enter a python file (optinal) > ")
         os.system("python " + python)
