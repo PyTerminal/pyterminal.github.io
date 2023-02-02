@@ -115,6 +115,6 @@ def terminal():
         print("The command you just entered might be unkown. The commands are > ")
         for command in commands:
             print(command)
-        print("If the command is not unkown there is a bug in the program. Feel free to edit the program when ever you like")
+        print("If the command is not unknown there is a bug in the program. Feel free to edit the program when ever you like")
         terminal()
 terminal()
