@@ -1,3 +1,4 @@
+#Feel free to edit code without permission.
 import os
 os.system("color a")
 os.system("title PyTerminal")
