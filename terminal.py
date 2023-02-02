@@ -2,7 +2,7 @@ import os
 os.system("color a")
 os.system("title PyTerminal")
 def terminal():
-    commands = ["goto", "cd","webview", "batch", "exists", "rem", "echo", "output", "ping", "exit", "help", "listfile", "listdir", "openfile", "color", "rem", "cls", "ipconfig", "start"]
+    commands = ["python", "goto", "cd","webview", "batch", "exists", "rem", "echo", "output", "ping", "exit", "help", "listfile", "listdir", "openfile", "color", "rem", "cls", "ipconfig", "start"]
     command = input("Enter command > ")
     if command == "help" or command == "/?":
         print("The commands are > ")
@@ -107,6 +107,9 @@ def terminal():
     if command == "goto":
         destination = input("Enter destination > ")
         os.system("cd " + destination)
+    if command == "python":
+        python = input("Enter a python file (optinal) > ")
+        os.system("python " + python)
     if command != commands:
         print("The command you just entered might be unkown. The commands are > ")
         for command in commands:
