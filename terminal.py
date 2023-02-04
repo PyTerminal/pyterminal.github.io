@@ -139,7 +139,7 @@ def terminal():
             print("False")
     if command == "iscommand":
         cmd = input("Enter a command > ")
-        if cmd in command or cmd == "/?":
+        if cmd in commands or cmd == "/?":
             print("True")
         else:
             print("False")
