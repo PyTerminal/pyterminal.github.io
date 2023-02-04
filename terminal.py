@@ -2,7 +2,7 @@ import os
 os.system("color a")
 os.system("title PyTerminal")
 def terminal():
-    commands = ["python", "goto", "cd","webview", "batch", "exists", "rem", "echo", "output", "ping", "exit", "help", "listfile", "listdir", "openfile", "color", "rem", "cls", "ipconfig", "start"]
+    commands = ["isdir", "isfile", "iscommand", "python", "goto", "cd","webview", "batch", "exists", "rem", "echo", "output", "ping", "exit", "help", "listfile", "listdir", "openfile", "color", "rem", "cls", "ipconfig", "start"]
     command = input("Enter command > ")
     if command == "help" or command == "/?":
         print("The commands are > ")
@@ -125,6 +125,24 @@ def terminal():
             os.system("cd " + destination)
         else:
             terminal()
+    if command == "isdir":
+        directory = input("Enter a directory > ")
+        if os.path.isdir(directory):
+            print("True")
+        else:
+            print("False")
+    if command == "isfile":
+        file = input("Enter a file > ")
+        if os.path.isfile(file):
+            print("True")
+        else:
+            print("False")
+    if command == "iscommand":
+        cmd = input("Enter a command > ")
+        if cmd in command or cmd == "/?":
+            print("True")
+        else:
+            print("False")
     if command == "python":
         python = input("Enter a python file (optinal) > ")
         os.system("python " + python)
