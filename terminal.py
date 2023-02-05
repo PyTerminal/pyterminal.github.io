@@ -84,6 +84,7 @@ def terminal():
             os.system("ipconfig /" + option)
         else:
             os.system("ipconfig")
+        terminal()
     if command == "exists":
         file = input("Enter a file or directory > ")
         if file != "":
@@ -93,6 +94,7 @@ def terminal():
                 print("The file or directory doesn't exist!")
         else:
             terminal()
+        terminal()
     if command == "batch":
         print("Running batch files could be dangerous. USE AT OWN RISK. Hit enter key to not run a batch file.")
         batch = input("Where is the batch file? ")
@@ -125,51 +127,60 @@ def terminal():
             os.system("cd " + destination)
         else:
             terminal()
+        terminal()
     if command == "isdir":
         directory = input("Enter a directory > ")
         if os.path.isdir(directory):
             print("True")
         else:
             print("False")
+        terminal()
     if command == "isfile":
         file = input("Enter a file > ")
         if os.path.isfile(file):
             print("True")
         else:
             print("False")
+        terminal()
     if command == "iscommand":
         cmd = input("Enter a command > ")
         if cmd in commands or cmd == "/?":
             print("True")
         else:
             print("False")
+        terminal()
     if command == "python":
         python = input("Enter a python file (optinal) > ")
         if python == "":
             os.system("python")
          else:
             os.system("python " + python)
+         terminal()
     if command == "tracert":
         website = input("Enter a website > ")
         os.system("tracert " + website)
+        terminal()
     if command == "arp":
         cmd = input("Enter > ")
         if cmd != "":
             os.system("arp " + cmd)
         else:
             os.system("arp")
+        terminal()
     if command == "netstat":
         cmd = input("Enter > ")
         if cmd != "":
             os.system("netstat " + cmd)
         else:
             os.system("netstat")
+        terminal()
     if command == "title":
         title = input("Enter  title > ")
         if title != "":
             os.system("title " + title)
         else:
             terminal()
+        terminal()
     if command != commands:
         print("The command you just entered might be unkown. The commands are > ")
         for command in commands:
