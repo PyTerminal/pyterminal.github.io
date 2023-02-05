@@ -2,7 +2,7 @@ import os
 os.system("color a")
 os.system("title PyTerminal")
 def terminal():
-    commands =["isdir", "isfile", "iscommand", "python", "goto", "cd","webview", "batch", "exists", "rem", "echo", "output", "ping", "exit", "help", "listfile", "listdir", "openfile", "color", "rem", "cls", "ipconfig", "start"]
+    commands =["isdir","tracert", "isfile", "iscommand", "python", "goto", "cd","webview", "batch", "exists", "rem", "echo", "output", "ping", "exit", "help", "listfile", "listdir", "openfile", "color", "rem", "cls", "ipconfig", "start"]
     command = input("Enter command > ")
     if command == "help" or command == "/?":
         print("The commands are > ")
@@ -149,6 +149,21 @@ def terminal():
             os.system("python")
          else:
             os.system("python " + python)
+    if command == "tracert":
+        website = input("Enter a website > ")
+        os.system("tracert " + website)
+    if command == "arp":
+        cmd = input("Enter > ")
+        if cmd != "":
+            os.system("arp " + cmd)
+        else:
+            os.system("arp")
+    if command == "netstat":
+        cmd = input("Enter > ")
+        if cmd != "":
+            os.system("netstat " + cmd)
+        else:
+            os.system("netstat")
     if command != commands:
         print("The command you just entered might be unkown. The commands are > ")
         for command in commands:
