@@ -2,7 +2,7 @@ import os
 os.system("color a")
 os.system("title PyTerminal")
 def terminal():
-    commands =["isdir", "title", "tracert", "isfile", "iscommand", "python", "goto", "cd","webview", "batch", "exists", "rem", "echo", "output", "ping", "exit", "help", "listfile", "listdir", "openfile", "color", "rem", "cls", "ipconfig", "start"]
+    commands =["isdir", "repository", "mkdir" "color", "title", "tracert", "isfile", "iscommand", "python", "goto", "cd","webview", "batch", "exists", "rem", "echo", "output", "ping", "exit", "help", "listfile", "listdir", "openfile", "color", "rem", "cls", "ipconfig", "start"]
     command = input("Enter command > ")
     if command == "help" or command == "/?":
         print("The commands are > ")
@@ -174,6 +174,12 @@ def terminal():
         else:
             os.system("netstat")
         terminal()
+    if command == "mkdir":
+        directory = input("Enter directory name > ")
+        if os.path.exists(directory):
+            print("The directory already exists!")
+        else:
+            os.system("mkdir " + directory)
     if command == "title":
         title = input("Enter  title > ")
         if title != "":
@@ -181,6 +187,9 @@ def terminal():
         else:
             terminal()
         terminal()
+    if command == "repository":
+        import webbrowser
+        webbrowser.open_new("https://github.com/PyTerminal/pyterminal.github.io/")
     if command != commands:
         print("The command you just entered might be unkown. The commands are > ")
         for command in commands:
