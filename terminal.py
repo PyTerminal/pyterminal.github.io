@@ -199,6 +199,9 @@ def terminal():
                 os.system("ping " + destination + "-t -l " + packets)
             if repeat == False:
                 os.system("ping " + destination + "-l " + packets)
+         else:
+            print("You can only enter 1-6550!")
+            terminal()
     if command != commands:
         print("The command you just entered might be unkown. The commands are > ")
         for command in commands:
