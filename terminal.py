@@ -2,7 +2,7 @@ import os
 os.system("color a")
 os.system("title PyTerminal")
 def terminal():
-    commands =["isdir", "repository", "listcmd", "pingwp", "mkdir" "color", "title", "tracert", "isfile", "iscommand", "python", "goto", "cd","webview", "batch", "exists", "rem", "echo", "output", "ping", "exit", "help", "listfile", "listdir", "openfile", "color", "rem", "cls", "ipconfig", "start"]
+    commands =["isdir", "github", "repository", "listcmd", "pingwp", "mkdir" "color", "title", "tracert", "isfile", "iscommand", "python", "goto", "cd","webview", "batch", "exists", "rem", "echo", "output", "ping", "exit", "help", "listfile", "listdir", "openfile", "color", "rem", "cls", "ipconfig", "start"]
     command = input("Enter command(type help or /? or listcmd for help > ")
     if command == "help" or command == "/?" or command == "listcmd":
         print("The commands are > ")
@@ -202,7 +202,15 @@ def terminal():
          else:
             print("You can only enter 1-6550!")
             terminal()
-    if command != commands:
+      if command == "github":
+        project == input("Enter project URL(optional) > ")
+        if project != "":
+            import webbrowser
+            webbrowser.open_new(project)
+        else:
+            webbrowser.open_new("https://github.com")
+        terminal()
+      if command != commands:
         print("The command you just entered might be unkown. The commands are > ")
         for command in commands:
             print(command)
