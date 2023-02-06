@@ -2,9 +2,9 @@ import os
 os.system("color a")
 os.system("title PyTerminal")
 def terminal():
-    commands =["isdir", "repository", "mkdir" "color", "title", "tracert", "isfile", "iscommand", "python", "goto", "cd","webview", "batch", "exists", "rem", "echo", "output", "ping", "exit", "help", "listfile", "listdir", "openfile", "color", "rem", "cls", "ipconfig", "start"]
-    command = input("Enter command > ")
-    if command == "help" or command == "/?":
+    commands =["isdir", "repository", "listcmd", "pingwp", "mkdir" "color", "title", "tracert", "isfile", "iscommand", "python", "goto", "cd","webview", "batch", "exists", "rem", "echo", "output", "ping", "exit", "help", "listfile", "listdir", "openfile", "color", "rem", "cls", "ipconfig", "start"]
+    command = input("Enter command(type help or /? or listcmd for help > ")
+    if command == "help" or command == "/?" or command == "listcmd":
         print("The commands are > ")
         for command in commands:
             print(command)
@@ -190,6 +190,15 @@ def terminal():
     if command == "repository":
         import webbrowser
         webbrowser.open_new("https://github.com/PyTerminal/pyterminal.github.io/")
+    if command == "pingwp":
+        packets = input("Enter packet amount 1-6550 > ")
+        if packets < 6551:
+            destination = input("Enter destination > ")
+            repeat = input("Do you want to repeat it? True/False > ")
+            if repeat == True:
+                os.system("ping " + destination + "-t -l " + packets)
+            if repeat == False:
+                os.system("ping " + destination + "-l " + packets)
     if command != commands:
         print("The command you just entered might be unkown. The commands are > ")
         for command in commands:
